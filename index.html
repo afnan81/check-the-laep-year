@@ -1,0 +1,27 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leap Year Checker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Leap Year Checker</h1>
+        <form method="POST">
+            <input type="number" name="year" placeholder="Enter year" required>
+            <button type="submit">Check</button>
+        </form>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        {% if result is not none %}
+            <div class="result">
+                {{ year }} is {{ '' if result else 'not ' }}a leap year
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
